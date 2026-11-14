@@ -1,0 +1,457 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f5f9;
+    color: #202938;
+}
+
+.navbar {
+    background: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar h2 span {
+    color: #6655df;
+}
+
+button {
+    background: #6655df;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #5140c5;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+    padding: 30px 5%;
+    align-items: start;
+}
+
+.editor {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px #00000008;
+}
+
+.editor h1 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.editor h3 {
+    margin: 24px 0 15px;
+    color: #6655df;
+}
+
+label {
+    display: block;
+    margin: 12px 0 7px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    outline: none;
+    font-size: 13px;
+}
+
+input:focus, textarea:focus {
+    border-color: #6655df;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 85px;
+}
+
+.preview-section {
+    min-width: 0;
+}
+
+.preview-heading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    align-items: center;
+}
+
+.preview-heading span {
+    background: #e8e5ff;
+    color: #6655df;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.resume {
+    background: white;
+    width: 100%;
+    max-width: 794px;
+    min-height: 1123px;
+    margin: auto;
+    box-shadow: 0 5px 25px #00000012;
+}
+
+.resume-header {
+    background: #263449;
+    color: white;
+    padding: 45px 40px;
+}
+
+.resume-header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.resume-header h3 {
+    color: #c9c6ff;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.resume-header p {
+    font-size: 13px;
+}
+
+.resume-content {
+    padding: 35px 40px;
+}
+
+.resume-section {
+    margin-bottom: 30px;
+}
+
+.resume-section h2 {
+    color: #6655df;
+    font-size: 15px;
+    border-bottom: 2px solid #6655df;
+    padding-bottom: 8px;
+    margin-bottom: 13px;
+}
+
+.resume-section h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.resume-section p {
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .resume {
+        min-height: 900px;
+    }
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .navbar, .editor, .preview-heading {
+        display: none !important;
+    }
+
+    .container {
+        display: block;
+        padding: 0;
+    }
+
+    .resume {
+        box-shadow: none;
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+    }
+
+    .resume-section {
+        break-inside: avoid;
+    }
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+}
+
+
+/* Template Selection */
+
+#templateSelect {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Template 1 - Professional Blue */
+
+.resume.template1 .resume-header {
+    background: #263449;
+    color: white;
+}
+
+.resume.template1 .resume-section h2 {
+    color: #6655df;
+    border-color: #6655df;
+}
+
+/* Template 2 - Minimal Black */
+
+.resume.template2 .resume-header {
+    background: white;
+    color: #171717;
+    border-bottom: 3px solid #222;
+}
+
+.resume.template2 .resume-header h3 {
+    color: #555;
+}
+
+.resume.template2 .resume-section h2 {
+    color: #222;
+    border-color: #222;
+}
+
+.resume.template2 .resume-content {
+    font-family: Georgia, serif;
+}
+
+/* Template 3 - Modern Purple */
+
+.resume.template3 .resume-header {
+    background: #5836a5;
+    color: white;
+    border-bottom: 8px solid #d5c5ff;
+}
+
+.resume.template3 .resume-header h3 {
+    color: #e3d8ff;
+}
+
+.resume.template3 .resume-section h2 {
+    color: #7046c7;
+    border-color: #bba3ef;
+}
+
+.resume.template3 .resume-content {
+    background: #fdfbff;
+}
+
+
+
+/* Navigation Buttons */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    background: #eeeaff;
+    color: #6655df;
+    border: 1px solid #ded8ff;
+}
+
+.secondary-btn:hover {
+    background: #ded8ff;
+}
+
+
+
+/* =================================
+   FINAL PDF PRINT FORMATTING
+================================= */
+
+@page {
+    size: A4;
+    margin: 12mm;
+}
+
+@media print {
+
+    html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: white;
+        color: #222;
+    }
+
+    .navbar,
+    .editor,
+    .preview-heading {
+        display: none !important;
+    }
+
+    .container {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .preview-section {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .resume {
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        overflow: visible;
+    }
+
+    .resume-header {
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .resume-content {
+        padding: 25px 30px;
+    }
+
+    .resume-section {
+        margin-bottom: 22px;
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    .resume-section h2 {
+        break-after: avoid;
+        page-break-after: avoid;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .resume-section h3 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .resume-section p {
+        font-size: 11pt;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+        display: none !important;
+    }
+}
+
+
+
+/* =================================
+   FINAL RESPONSIVE IMPROVEMENTS
+================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 15px;
+        gap: 20px;
+    }
+
+    .editor {
+        padding: 18px;
+    }
+
+    .navbar {
+        padding: 15px;
+    }
+
+    .nav-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }
+
+    .nav-actions button {
+        width: 100%;
+    }
+
+    .resume-header {
+        padding: 25px 20px;
+    }
+
+    .resume-header h1 {
+        font-size: 24px;
+        overflow-wrap: anywhere;
+    }
+
+    .resume-content {
+        padding: 25px 20px;
+    }
+
+    .resume-section {
+        margin-bottom: 22px;
+    }
+}
+
+/* Drag and Drop */
+
+.resume-section[draggable="true"] {
+    cursor: grab;
+}
+
+.resume-section.dragging {
+    opacity: 0.4;
+    border: 2px dashed #6655df;
+}
+
+@media print {
+    .resume-section {
+        cursor: auto;
+    }
+}

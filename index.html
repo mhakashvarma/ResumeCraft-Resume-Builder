@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+<header class="navbar">
+    <h2>Resume<span>Craft.</span></h2>
+
+    <div class="nav-actions">
+        <button id="saveBtn" class="secondary-btn">
+            Save Data
+        </button>
+
+        <button id="exportJsonBtn" class="secondary-btn">
+            Export JSON
+        </button>
+
+        <button id="importJsonBtn" class="secondary-btn">
+            Import JSON
+        </button>
+
+        <input
+            type="file"
+            id="importFile"
+            accept=".json,application/json"
+            hidden
+        >
+
+        <button onclick="downloadResume()">
+            Export PDF
+        </button>
+    </div>
+</header>
+
+
+        <section class="editor">
+            <h1>Build Your Resume</h1>
+            <p class="subtitle">Enter your details and watch your resume update.</p>
+
+            <h3>Personal Information</h3>
+
+            <label>Full Name</label>
+            <input id="name" placeholder="Your full name">
+
+            <label>Email Address</label>
+            <input id="email" placeholder="example@gmail.com">
+
+            <label>Phone Number</label>
+            <input id="phone" placeholder="+91 9876543210">
+
+            <label>Professional Title</label>
+            <input id="title" placeholder="Computer Science Student">
+
+            <label>Career Objective</label>
+            <textarea id="objective" placeholder="Write a short introduction..."></textarea>
+
+            <h3>Education</h3>
+
+            <label>College / University</label>
+            <input id="college" placeholder="Your college name">
+
+            <label>Degree</label>
+            <input id="degree" placeholder="B.E. Computer Science">
+
+            <label>Graduation Year</label>
+            <input id="year" placeholder="2027">
+
+            <h3>Skills</h3>
+            <input id="skills" placeholder="Python, Java, HTML, CSS, SQL">
+
+            <h3>Projects</h3>
+            <textarea id="projects" placeholder="Describe your projects..."></textarea>
+
+            <h3>Experience</h3>
+            <textarea id="experience" placeholder="Internships or work experience..."></textarea>
+
+        </section>
+
+        <section class="preview-section">
+            <div class="preview-heading">
+               <h2>Live Preview</h2>
+
+               <select id="templateSelect">
+                <option value="template1">Professional Blue</option>
+                <option value="template2">Minimal Black</option>
+                <option value="template3">Modern Purple</option>
+               </select>
+            </div>
+
+            <div class="resume" id="resume">
+
+                <div class="resume-header">
+                    <h1 id="p-name">Your Name</h1>
+                    <h3 id="p-title">Professional Title</h3>
+                    <p>
+                        <span id="p-email">Email Address</span> |
+                        <span id="p-phone">Phone Number</span>
+                    </p>
+                </div>
+
+                <div class="resume-content">
+
+                    <div class="resume-section"
+                           id="profileSection"
+                           draggable="true">
+                           <h2>PROFILE</h2>
+                        <p id="p-objective">Your career objective will appear here.</p>
+                    </div>
+
+                    <div class="resume-section">
+                        <h2>EDUCATION</h2>
+                        <h3 id="p-college">College Name</h3>
+                        <p id="p-degree">Degree</p>
+                        <p id="p-year">Graduation Year</p>
+                    </div>
+
+                    <div class="resume-section">
+                        <h2>SKILLS</h2>
+                        <p id="p-skills">Your skills will appear here.</p>
+                    </div>
+
+                    <div class="resume-section">
+                        <h2>PROJECTS</h2>
+                        <p id="p-projects">Your projects will appear here.</p>
+                    </div>
+
+                    <div class="resume-section">
+                        <h2>EXPERIENCE</h2>
+                        <p id="p-experience">Your experience will appear here.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
